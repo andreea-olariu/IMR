@@ -72,3 +72,4 @@ ExportedObj/
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 **/Builds
+**/.DS_Store
