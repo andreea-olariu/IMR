@@ -7,4 +7,4 @@ Pentru tema 1:
 - Pisica va avea o pozitie fixa
 - Cactusul va aparea positie dinamica, in functie de unde apasa userul (functionalitate oferita de scriptul TapToPlace)
 - In momentul in care cactusul se apropie de pisica (distanta fiind calculata in metoda Upload a cactusului), se va schimba o variabila booleana *attacking* care face ca animatia cactusului sa se schimbe -> fie in Idle (false), fie in Attack (true); pentru asta am folosit un Animator 
-- Video de demo -> HW_1/Demo Video
+- Video de demo -> HW_1/CatCactuGame/Demo Video
