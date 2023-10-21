@@ -1,33 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ThrowObject : MonoBehaviour
 {
-    public XRGrabInteractable grabbable;
-    public float throwForce = 5f;
-
+    public float throwForce = 200000000f;
     private Rigidbody rb;
 
-    private void Awake()
+    public XRGrabInteractable grabInteractable;
+    public GrabbedSphere grabbedSphere;
+    public GameObject table;
+    public TextMesh score;
+    private bool wasThrown;
+
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+        grabbedSphere = GetComponent<GrabbedSphere>();
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        grabInteractable.onSelectExited.AddListener(Throw);
     }
 
-    private void OnEnable()
+    void Update()       
     {
-        grabbable.onSelectEnter.AddListener(Throw);
+        //if (grabbedSphere.isGrabbed)
+        //{
+        //    Debug.Log("isGrabbed is true");
+        //}
+
+        //Debug.Log(Vector3.Distance(table.transform.position, gameObject.transform.position));
+
+
+        if (Hit())
+        {
+            if(wasThrown)
+                IncreaseScore();
+            wasThrown = false;
+        }
     }
 
-    private void OnDisable()
+    void Throw(XRBaseInteractor interactor)
     {
-        grabbable.onSelectEnter.RemoveListener(Throw);
+        if(!grabbedSphere.isThrown)
+        {
+            return;
+        }
+
+        rb.isKinematic = false;
+        Vector3 throwDirection = transform.forward;
+        grabInteractable.transform.parent = null;
+        rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+
+        grabbedSphere.isThrown = false;
+        grabbedSphere.isGrabbed = false;
+        wasThrown = true;
+
     }
 
-    private void Throw(XRBaseInteractor interactor)
+    bool Hit()
     {
-        rb.velocity = new Vector3(2, 2, 2);
-        rb.angularVelocity = new Vector3(2, 2, 2);
+        return Vector3.Distance(table.transform.position, gameObject.transform.position) < 1.2;
+    }
+
+    void IncreaseScore()
+    {
+        float currentScore = float.Parse(score.text);
+        currentScore += 1;
+        score.text = currentScore.ToString();
     }
 }
