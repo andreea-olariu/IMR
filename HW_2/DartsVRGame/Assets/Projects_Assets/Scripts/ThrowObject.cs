@@ -4,12 +4,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ThrowObject : MonoBehaviour
 {
-    public float throwForce = 200000000f;
+    public float throwForce = 2000f;
     private Rigidbody rb;
 
     public XRGrabInteractable grabInteractable;
     public GrabbedSphere grabbedSphere;
-    public GameObject table;
+    public GameObject board;
     public TextMesh score;
     private bool wasThrown;
 
@@ -59,7 +59,7 @@ public class ThrowObject : MonoBehaviour
 
     bool Hit()
     {
-        return Vector3.Distance(table.transform.position, gameObject.transform.position) < 1.2;
+        return Vector3.Distance(board.transform.position, gameObject.transform.position) < 1.2;
     }
 
     void IncreaseScore()
