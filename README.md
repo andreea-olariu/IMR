@@ -1,6 +1,6 @@
 # IMR
 
-Pentru tema 1:
+## Pentru tema 1:
 
 - M-am folosit de un template de proiect AR Core;
 - Am adaugat doua personaje - cactusul si o pisica
@@ -9,7 +9,7 @@ Pentru tema 1:
 - In momentul in care cactusul se apropie de pisica (distanta fiind calculata in metoda Upload a cactusului), se va schimba o variabila booleana *attacking* care face ca animatia cactusului sa se schimbe -> fie in Idle (false), fie in Attack (true); pentru asta am folosit un Animator 
 - Video de demo -> HW_1/CatCactuGame/Demo Video
 
-Pentru tema 2:
+## Pentru tema 2:
 - Am folosit XRInteraction Toolkit cu Mock HMD pentru a face un simulator VR
 - Am adaugat doua obiecte gasite pe Unity assets store pentru Left si Right Controller
 - Am adaugat o sfera 3D care are proprietarea de interactable si poate interactiona cu controllerele mentionate la punctul anterior
