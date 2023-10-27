@@ -20,3 +20,9 @@
 - In scriptul `ThrowObject.cs` asociat sferei am referinte catre sfera pentru a-i vedea proprietatile, catre text box-ul de score pentru a-l actualiza cand e cazul (cand sfera atinge board), dar si catre board pentru a calcula distanta intre aceasta si sfera
 - In scriptul HDMInfoManager am facut setupul pentru Mock (dupa tutorialul din suportul de laborator)
 - In scriptul GrabbedSphere am setat proprietati pentru sfera - cand e grabbed, cand e thrown, cand se reintoarce pe plan
+
+## Pentru tema 3:
+- Am facut 2 metode dupa 2 tutoriale diferite de a modela mana, pornind de la un cub si am modelat marginile, am extins si scalat pana a iesit ok
+- Am *incercat* sa fac si unwrap
+- Am adaugat in Unity in setupul din tema 2 modelul pentru ambele maini, am pus o textura gasita intr-un pachet din care am luat modelele de pe assets store folosite la tema trecuta
+- Poze de demo in HW_3/demo_pictures pentru model si pentru cum arata in unity
